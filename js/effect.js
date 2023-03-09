@@ -86,7 +86,7 @@ function navHighlighter() {
     const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
     sectionId = current.getAttribute("id");
     
-	
+
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
     - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
@@ -96,7 +96,6 @@ function navHighlighter() {
       scrollY > sectionTop &&
       scrollY <= sectionTop + sectionHeight
     ){
-		console.log(document.querySelector("[href*=" + sectionId + "]"));
 		document.querySelector("[href*=" + sectionId + "]").style.color = "#4458dc";
     } else {
 		document.querySelector("[href*=" + sectionId + "]").style.color = "black";
