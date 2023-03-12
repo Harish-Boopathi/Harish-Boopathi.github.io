@@ -96,9 +96,25 @@ function navHighlighter() {
       scrollY > sectionTop &&
       scrollY <= sectionTop + sectionHeight
     ){
-		document.querySelector("[href*=" + sectionId + "]").style.color = "#4458dc";
+		//console.log(document.querySelector("[href*=" + sectionId + "]"))
+		document.querySelector("li a[href*=" + sectionId + "]").classList.add("active");
     } else {
-		document.querySelector("[href*=" + sectionId + "]").style.color = "black";
+		document.querySelector("li a[href*=" + sectionId + "]").classList.remove("active");
     }
   });
 }
+
+//nav bar close
+const ham =  document.querySelector(".navbar-toggler");
+const menu =  document.querySelector(".nav");
+
+ham.addEventListener("click" , () =>{
+	ham.ariaExpanded="true";
+	document.querySelector(".header_area .navbar .nav").classList.remove("activated");
+})
+console.log(document.querySelector(".header_area .navbar .nav"));
+document.querySelectorAll(".nav-link").forEach(n => n.
+	addEventListener("click" , () =>{
+		ham.ariaExpanded="false";
+		document.querySelector(".header_area .navbar .nav").classList.add("activated");
+	}))
